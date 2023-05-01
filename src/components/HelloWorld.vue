@@ -1,7 +1,15 @@
 <template>
   <v-dialog v-model="dialog" persistent max-width="290">
     <template v-slot:activator="{ on, attrs }">
-      <v-btn color="primary" dark v-bind="attrs" v-on="on"> Open Dialog </v-btn>
+      <v-btn
+        color="primary"
+        dark
+        v-bind="attrs"
+        v-on="on"
+        data-testid="activator"
+      >
+        Open Dialog
+      </v-btn>
     </template>
     <v-card>
       <v-card-title class="text-h5">
@@ -13,7 +21,12 @@
       >
       <v-card-actions>
         <v-spacer></v-spacer>
-        <v-btn color="green darken-1" text @click="dialog = false">
+        <v-btn
+          color="green darken-1"
+          text
+          @click="dialog = false"
+          data-testid="cancel"
+        >
           Disagree
         </v-btn>
         <v-btn color="green darken-1" text @click="dialog = false">
